@@ -1,6 +1,6 @@
 import './App.css';
 import './grille.css';
-import Navbar from './components/Navbar/navbar';
+//import imageUrl from "util/types"
 import Blob from "./components/Shapes/blob";
 import Header from './components/Header/header';
 import SkillCircle from './components/skillCircle/skillCircle';
@@ -8,13 +8,15 @@ function App() {
  
 
   return (
-    <div className='App container'>
+    <div className='App'>
       
-      <Navbar/>
+   
       <Header/>
-      <div className="carousselBox">
-          <SkillCircle></SkillCircle>
-      </div>
+      <main>
+      <SkillCircle></SkillCircle>
+
+      </main>
+  
       
       
     </div>

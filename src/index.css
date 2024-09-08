@@ -16,14 +16,19 @@ html{
 h1,h2,h3,h4,h5,h6,a,button{
     font-family: var(--title-font);
 }
-body{
- font-family: var(--text-font);
- background-color: var(--light-color);
- width: 100%;
- min-height: 100vh;
- color:var(--dark-color);
 
-}
 a{
     text-decoration: none;
 }
+button{
+    cursor: grab;
+}
+.imgBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .imgBox>img{
+     max-width: 100%;
+     height: auto;
+ }

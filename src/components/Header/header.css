@@ -1,12 +1,6 @@
-header{
-    background-color: var(--prim-color);
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    position: relative;
-}
-header>h1{
-    font-size: 3em;
+
+.realisationNav>h1{
+    font-size: 2.3em;
     text-align: center;
     color: var(--light-color);
     
@@ -18,7 +12,6 @@ header>h1{
     align-items: center;
     text-transform: capitalize;
     padding: 20px;
-
     font-size: 2em;
     color: var(--sec-color);
     transition: all 0.5s ease-in-out;
@@ -27,9 +20,7 @@ header>h1{
 .specialityChoice:hover{
     transform: scale(1.1) translateX(-50px);
     transition: all 0.5s ease-in-out;
-    text-shadow: 3px 1px 0px var(--light-color);
-
-    filter: drop-shadow(5px 5px 5px var(--dark-color));
+    text-shadow: 3px 1px 0px var(--light-color),5px 5px 5px var(--dark-color);
     cursor: grab;
 }
 .specialityChoice>a{
@@ -38,4 +29,14 @@ header>h1{
     height: 100%;
     display: flex;
     align-items: center;
+}
+.realisationNav{
+    background-color: var(--prim-color);
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    padding: 0;
+    margin: 0;
 }

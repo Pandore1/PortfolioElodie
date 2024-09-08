@@ -5,12 +5,15 @@
     height: 100%; 
     box-sizing: border-box;
 }
-.imgBox{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-.imgBox>img{
+
+body{
+    font-family: var(--text-font);
+    background-color: var(--light-color);
     width: 100%;
-    height: auto;
+    min-height: 100vh;
+    color:var(--dark-color);
+   
+   }
+main{
+    margin:5%  auto;
 }
