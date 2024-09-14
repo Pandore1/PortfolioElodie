@@ -1,9 +1,9 @@
-import React from "react";
-import meHeader from "../../assets/personne.png";
-import Blob from "../Shapes/blob";
-import './header.css';
-import Navbar from "../Navbar/navbar";
-const Header=() => {
+import { useCallback, useState } from "react"
+import meHeader from "../assets/personne.png";
+import Blob from "./blob";
+
+import Navbar from "./navbar";
+export default function Header() {
     return (
         <header>
             <Navbar></Navbar>
@@ -26,7 +26,7 @@ const Header=() => {
                 </div>
              </div>
              </section>
+             <Blob></Blob>
         </header>
     )
 }
-export default Header;

@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import { useCallback, useState } from "react"
 import './skillCircle.css';
-// import Illustrator from "../../assets/illustrator.png";
-// import Photoshop from "../../assets/photoshop.png";
-// import WordPress from "../../assets/wordpress.png";
+
 export default function  SkillCircle(){
 /*
         const [index,setIndex]=useState(0);
@@ -25,10 +23,21 @@ export default function  SkillCircle(){
                 <img src="src\assets\illustrator.png" alt="" />
             </div>
             </article>
-           
-            <div className="imgBox skillItem col-3"><img src="src\assets\photoshop.png" alt="Photoshop" /></div>
+            <article className="skillItem col-3">
+                <div className="imgBox skillItem col-3">
+                    <img src="src\assets\photoshop.png" alt="Photoshop" />
+                    </div>
 
-            <div className="imgBox skillItem col-3"><img src="src\assets\wordpress.png" alt="" /></div>
+            </article>
+            <article className="skillItem col-3">
+            
+          <div className="imgBox skillItem col-3"><img src="src\assets\wordpress.png" alt="Wordpress" /></div>
+                
+
+            </article>
+           
+
+  
 
         </section>
         

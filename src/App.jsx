@@ -1,9 +1,9 @@
-import './App.css';
-import './grille.css';
+import './style.css';
+
 //import imageUrl from "util/types"
-import Blob from "./components/Shapes/blob";
-import Header from './components/Header/header';
-import SkillCircle from './components/skillCircle/skillCircle';
+import Blob from "./components/blob";
+import Header from './components/header';
+import SkillCircle from './components/skillCircle';
 function App() {
  
 

@@ -1,6 +1,6 @@
-import React from "react";
-import './navbar.css';
-const Navbar=()=>{
+import { useCallback, useState } from "react"
+
+export default function Navbar(){
     return(
         <nav className="menuBox">
             <a  href="#"><h1 className="logoName">Logo</h1></a>
@@ -13,4 +13,3 @@ const Navbar=()=>{
         </nav>
     )
 }
-export default Navbar
