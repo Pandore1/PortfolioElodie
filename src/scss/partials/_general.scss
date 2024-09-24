@@ -23,32 +23,34 @@ main{
     
 }
 .specialityChoice{
-    border-bottom: 3px solid var(--sec-color);
+    border-bottom: 5px solid var(--secColor);
     height: 45%;
     display: flex;
     align-items: center;
     text-transform: capitalize;
     padding: 20px;
     font-size: 2em;
-    color: var(--sec-color);
+    color: var(--lightColor);
     transition: all 0.5s ease-in-out;
+    &:hover{
+        transform: scaleX(1.05) translateX(-50px);
+        transition: all 0.5s ease-in-out;
+        text-shadow: 1px 4px 1px var(--secColorHover);
+        cursor: grab;
+    }
+    a{
+        color: inherit;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
 
 }
-.specialityChoice:hover{
-    transform: scale(1.1) translateX(-50px);
-    transition: all 0.5s ease-in-out;
-    text-shadow: 3px 1px 0px var(--light-color),5px 5px 5px var(--dark-color);
-    cursor: grab;
-}
-.specialityChoice>a{
-    color: inherit;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
+
+
 .realisationNav{
-    background-color: var(--prim-color);
+    background-color: var(--primColor);
     display: flex;
     flex-flow: row wrap;
     width: 100%;

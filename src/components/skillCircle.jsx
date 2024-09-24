@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react"
 import './skillCircle.css';
 
+
 export default function  SkillCircle(){
 /*
         const [index,setIndex]=useState(0);

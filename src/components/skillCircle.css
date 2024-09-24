@@ -8,6 +8,7 @@
 .skillItem{
     background-color: var(--sec-color);
     padding: 1em;
+    max-width: 150px;
     border-radius: 25px;
 }
 .skillItem>img{

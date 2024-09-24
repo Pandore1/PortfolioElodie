@@ -4,6 +4,7 @@ import './style.css';
 import Blob from "./components/blob";
 import Header from './components/header';
 import SkillCircle from './components/skillCircle';
+import RealisationTemplate from './components/realisationTemplate';
 function App() {
  
 
@@ -14,7 +15,7 @@ function App() {
       <Header/>
       <main>
       <SkillCircle></SkillCircle>
-
+      <RealisationTemplate></RealisationTemplate>
       </main>
   
       

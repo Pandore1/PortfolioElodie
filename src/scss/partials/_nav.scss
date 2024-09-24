@@ -4,14 +4,15 @@
     align-items: center;
     min-height: 75px;
     display: flex;
-    color:var(--dark-color);
-    margin: 1% auto;
-    max-width: 90%;
+    color:var(--lightColor);
+    margin: 0% auto;
+    width: 100%;
+    padding: 20px;
 
 }
 .logoName{
     text-decoration: none;
-    color:var(--prim-color)
+    color:var(--primColor)
 }
 .menu{
     list-style: none;
@@ -26,59 +27,58 @@
 
 .tab{
     margin: 0% 2%;
-    font-size: 1.1em;
+    .tabLink{
+        position: relative;
+        color: var(--darkColor);
+        border-radius: 10px;
+        
+        font-size: 1.2em;
+        transition: all 0.5s ease-in-out;
+        margin: 0;
+        
+        width: 100%;
+        &:hover{
+            transition: all 0.5s ease-in-out;
+
+            &::before{
+                width: 100%;
+            }
+            &::after{
+                width: 50%;
+            }
+        }
+        &::before{
+            content:attr(link-name);
+           
+            color: var(--primColorHover);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+        }
+        &::after{
+            position: absolute;
+            content:"";
+            background-color: var(--primColor);
+            width: 0;
+            height: 5px;
+            bottom: -5px;
+            left: 0;
+            border-radius: 10px;
+            transition: all 0.5s ease-in-out;
+        }
+    }
 }
 
-.tabLink{
 
-    position: relative;
-    color: inherit;
-    border-radius: 10px;
-    
 
-    transition: all 0.5s ease-in-out;
-    margin: 0;
-     
-    width: 100%;
-}
-.tabLink:hover{
-    font-weight: bolder;
-}
 
-.tabLink::before{
-    content:attr(link-name);
-    transition: all 0.5 ease-in-out ;
-    color: var(--prim-color);
-    position: absolute;
-    font-weight: bold;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 0;
-    overflow: hidden;
-}
-.tabLink:hover::before{
-    width: 100%;
-    transition: all 0.5s ease-in-out;
-}
+
 
 /*Ligne en dessous du texte*/
-.tabLink::after{
-    position: absolute;
-    content:"";
-    background-color: var(--prim-color);
-    width: 0;
-    height: 5px;
-    bottom: -5px;
-    left: 0;
-    border-radius: 10px;
-    transition: all 0.5s ease-in-out;
-
-}
-.tabLink:hover::after{
-    width: 50%;
-    transition: all 0.5s ease-in-out;
-}
 
 
