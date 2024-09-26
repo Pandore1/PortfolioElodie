@@ -41,7 +41,6 @@ export default function RealisationTemplate({
           
         </div>
         { <div className={`realisationModal ${isRealisationOpen?'open':''}`}>
-        
             <div className="imgBox">
             <img src={fullImage} alt="" />
             </div> 

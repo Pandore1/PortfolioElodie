@@ -40,6 +40,9 @@
 }
 .realisationSection {
   position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 .realisation {
   max-width: 20%;
@@ -136,14 +139,12 @@
     max-width: 40px;
     min-height: 40px;
     background-color: var(--primColor);
-    border: none;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     color: var(--lightColor);
     padding: 0.2em;
-    border-radius: 50%;
     .moreIcon{
       max-width: 85%;
   }
