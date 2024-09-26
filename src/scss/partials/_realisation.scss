@@ -1,68 +1,153 @@
-
-.realisation{
-    max-width: 25%;
-    border-radius: 0 0 50px 50px;
-   
+.realisationNav > h1 {
+  font-size: 2.3em;
+  text-align: center;
+  color: var(--light-color);
 }
-.realisationTab{
+.specialityChoice {
+  border-bottom: 5px solid var(--secColor);
+  height: 45%;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  padding: 20px;
+  font-size: 2em;
+  color: var(--lightColor);
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    transform: scaleX(1.05) translateX(-50px);
+    transition: all 0.5s ease-in-out;
+    text-shadow: 1px 4px 1px var(--secColorHover);
+    cursor: grab;
+  }
+  a {
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.realisationNav {
+  background-color: var(--primColor);
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.realisationSection {
+  position: relative;
+}
+.realisation {
+  max-width: 25%;
+  border-radius: 0 0 50px 50px;
+  .realisationTab {
     background-color: var(--secColor);
     min-width: 100px;
     min-height: 30px;
     display: flex;
     justify-content: space-between;
     border-radius: 25px 25px 0 0;
-    padding:0.5em 1em;
-    .openRealisation{
-        width: 30px;
-        height: 30px;
-        font-size: 2em;
-        background-color: var(--primColor);
-       border: none;
-       color: var(--lightColor);
-       padding: 0;
-        border-radius: 50px;
+    padding: 0.5em 1em;
+  
+    h3 {
+      color: var(--primColor);
+      font-size: 1.5em;
+      padding: 0;
     }
-    h3{
-        color: var(--primColor);
-        font-size: 1.5em;
-        padding: 0;
+  }
+
+  .imgBox {
+    position: relative;
+    img {
+      border-radius: 0 0 25px 25px;
     }
+    .resumeRealisation {
+      position: absolute;
+
+      align-self: self-start;
+      z-index: 1;
+      width: 100%;
+      opacity: 0%;
+      background-color: var(--primOpacity);
+      color: var(--lightColor);
+      height: 0%;
+      transition: opacity 0.7s ease-in-out;
+      p {
+        padding: 1em;
+      }
+    }
+    &:hover {
+      .resumeRealisation {
+        height: 100%;
+
+        opacity: 100%;
+        border-radius: 0 0 25px 25px;
+      }
+      img {
+        filter: blur(10px);
+      }
+    }
+  }
 }
 
-.realisation .imgBox{
-    position: relative;
-    img{
-        border-radius: 0 0 25px 25px;
+.realisationModal {
+  position: absolute;
+  display: none;
+  font-size: 1.1em;
+  height: 100%;
+  padding: 0.2em 0;
+  justify-content: space-between;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  border-radius: 25px;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(2px 2px 5px var(--primOpacity));
+  background-color: #fff;
+  &.open {
+    display: flex;
+    flex-flow: row nowrap;
+    opacity: 100%;
+    transition: all 0.5 ease-in-out;
+  }
 
-    }
-    .resumeRealisation{
-        position: absolute;
+  .imgBox {
+    flex-basis: 45%;
+    margin: 0;
+  }
+  .realisationInfo {
+    margin: 0.6em 1em;
+    display: flex;
 
-        align-self:self-start;
-        z-index: 1;
-        width: 100%;
-        opacity: 0%;
-        background-color:var(--primOpacity);
-        color: var(--lightColor);
-        height: 0%;
-        transition:opacity 0.7s ease-in-out;
-        p{
-            padding: 1em;
-        }
-    
-    }
-    &:hover{
-        .resumeRealisation{
-            height: 100%;
-
-            opacity: 100%;
-            border-radius: 0 0 25px 25px;
-
-        }
-        img{
-            filter: blur(10px);
-        }
-    }
+    flex-basis: 45%;
+    flex-flow: column nowrap;
+   
+  }
+ 
+}
 
 
+.openMoreBtn{
+    max-width: 40px;
+    max-height: 40px;
+    background-color: var(--primColor);
+    border: none;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    color: var(--lightColor);
+    padding: 0.2em;
+    border-radius: 50%;
+    .moreIcon{
+      max-width: 85%;
+  }
+  &.close{
+    align-self: flex-end;
+  }
 }

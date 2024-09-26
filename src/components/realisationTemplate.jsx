@@ -1,22 +1,62 @@
-import {useContext} from "react";
+import {useContext, useState} from "react";
+import OpenMoreBtn from "./moreBtn";
 
-export default function RealisationTemplate(){
+
+
+export default function RealisationTemplate({
+    title,
+    id,
+    desc,
+    type,
+    competence,
+    previewImage,
+    fullImage,
+    year,
+})
+
+{
+    const [isRealisationOpen,setIsRealisationOpen]=useState(false);
+
+    const realisationModalOpen=()=>{
+        setIsRealisationOpen(true);
+    }
+    const realisationModalClose=()=>{
+        setIsRealisationOpen(false);
+    }
+  
     return (
         <>
-        <div className="realisation">
+        <div className="realisation" >
             <div className="realisationTab">
-            <h3>Chaton</h3>
-                <button className="openRealisation">+</button>
+            <h3>{title}</h3>
+            <OpenMoreBtn clicked={realisationModalOpen}/>
             </div>
             <div className="imgBox">
-            <img src="src\assets\chaton.jpeg" alt="" />
+            <img src={previewImage} alt="" />
             <div className="resumeRealisation">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent erat arcu, convallis eget feugiat id, convallis in purus. Fusce ut eleifend dolor. Nulla dictum interdum bibendum. </p>
+                <p>{desc}</p>
             </div>
             </div>
 
           
         </div>
+        { <div className={`realisationModal ${isRealisationOpen?'open':''}`}>
+        
+            <div className="imgBox">
+            <img src={fullImage} alt="" />
+            </div> 
+            <div className="realisationInfo">
+            <OpenMoreBtn isOpen={false} clicked={realisationModalClose}/>
+
+            <h2>
+                {title}
+            </h2>
+            <p>{desc}</p>
+            
+            </div>
+           
+        </div>
+        }
        
         </>
     )

@@ -3,8 +3,7 @@ import './style.css';
 //import imageUrl from "util/types"
 import Blob from "./components/blob";
 import Header from './components/header';
-import SkillCircle from './components/skillCircle';
-import RealisationTemplate from './components/realisationTemplate';
+import Realisation from './components/Realisation';
 function App() {
  
 
@@ -14,8 +13,7 @@ function App() {
    
       <Header/>
       <main>
-      <SkillCircle></SkillCircle>
-      <RealisationTemplate></RealisationTemplate>
+      <Realisation></Realisation>
       </main>
   
       
