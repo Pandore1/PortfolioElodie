@@ -29,7 +29,7 @@ export default function RealisationTemplate({
         <div className="realisation" >
             <div className="realisationTab">
             <h3>{title}</h3>
-            <OpenMoreBtn clicked={realisationModalOpen}/>
+            <OpenMoreBtn isOpen={true} clicked={realisationModalOpen}/>
             </div>
             <div className="imgBox">
             <img src={previewImage} alt="" />

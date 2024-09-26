@@ -3,7 +3,7 @@
 :root {
   /*Couleur*/
   --primColor:#681F7A;
-  --primColorHover:#79248e;
+  --primColorHover:#611d72;
   --primOpacity:rgba(104, 31, 122, 0.4);
   --lightColor:#F6FAF0;
   --darkColor: #332C23;
@@ -156,7 +156,7 @@ main > section {
 }
 
 .realisation {
-  max-width: 25%;
+  max-width: 20%;
   border-radius: 0 0 50px 50px;
 }
 .realisation .realisationTab {
@@ -206,15 +206,15 @@ main > section {
   position: absolute;
   display: none;
   font-size: 1.1em;
-  height: 100%;
+  height: 50vh;
   padding: 0.2em 0;
   justify-content: space-between;
-  top: 50%;
+  top: 50vh;
   left: 50%;
   opacity: 0;
-  transition: all 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   border-radius: 25px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50vh);
   filter: drop-shadow(2px 2px 5px var(--primOpacity));
   background-color: #fff;
 }
@@ -222,7 +222,7 @@ main > section {
   display: flex;
   flex-flow: row nowrap;
   opacity: 100%;
-  transition: all 0.5 ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 .realisationModal .imgBox {
   flex-basis: 45%;
@@ -235,9 +235,9 @@ main > section {
   flex-flow: column nowrap;
 }
 
-.openMoreBtn {
+.moreBtn {
   max-width: 40px;
-  max-height: 40px;
+  min-height: 40px;
   background-color: var(--primColor);
   border: none;
   display: flex;
@@ -248,11 +248,20 @@ main > section {
   padding: 0.2em;
   border-radius: 50%;
 }
-.openMoreBtn .moreIcon {
+.moreBtn .moreIcon {
   max-width: 85%;
 }
-.openMoreBtn.close {
+.moreBtn.open:active .moreIcon, .moreBtn:hover .moreIcon {
+  transition: all 0.2s ease-in-out;
+  transform: rotateZ(45deg);
+}
+.moreBtn.close {
+  transition: all 0.2s ease-in-out;
+  transform: rotateZ(45deg);
   align-self: flex-end;
+}
+.moreBtn.close:active .moreIcon, .moreBtn.close:hover .moreIcon {
+  transform: rotateZ(-45deg);
 }
 
 svg {

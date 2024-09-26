@@ -16,7 +16,6 @@ export default function Realisation() {
   return (
     <>
     <nav className="realisationNav">
-    <h1 className="col-12"> Mes Réalisations</h1>
 
     <div className="imgBox col-5">
       <img className="" src={meHeader} alt="" />
@@ -34,7 +33,7 @@ export default function Realisation() {
   </nav>
     <section className="realisationSection">
     
-      <h2>Realisation</h2>
+
       {realisation.map((realisationItem, idx) => (
         <RealisationTemplate
           id={idx}

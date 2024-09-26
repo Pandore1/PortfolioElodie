@@ -5,7 +5,7 @@ $lightColor: #F6FAF0; //F6FAF0  #EBE4F1
 $darkColor:#332C23;
 $secColor:#ADCF79; 
 $secColorHover:darken($secColor,20);
-$primColorHover:lighten($primColor,5);
+$primColorHover:darken($primColor,2);
 
 
 :root{
