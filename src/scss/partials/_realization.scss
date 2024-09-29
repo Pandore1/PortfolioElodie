@@ -1,4 +1,4 @@
-.realisationNav > h1 {
+.realizationNav > h1 {
   font-size: 2.3em;
   text-align: center;
   color: var(--light-color);
@@ -28,7 +28,7 @@
   }
 }
 
-.realisationNav {
+.realizationNav {
   background-color: var(--primColor);
   display: flex;
   flex-flow: row wrap;
@@ -38,19 +38,20 @@
   padding: 0;
   margin: 0;
 }
-.realisationSection {
+
+.realizationSection {
   position: relative;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  align-items: stretch;
 }
-.realisation {
-  max-width: 20%;
+.realization {
   border-radius: 0 0 50px 50px;
-  .realisationTab {
+  .realizationTab {
     background-color: var(--secColor);
-    min-width: 100px;
-    min-height: 30px;
+    width: 100%;
+    min-height: 20px;
     display: flex;
     justify-content: space-between;
     border-radius: 25px 25px 0 0;
@@ -65,30 +66,29 @@
 
   .imgBox {
     position: relative;
+    border-radius: inherit;
     img {
-      border-radius: 0 0 25px 25px;
+      border-radius: inherit;
     }
-    .resumeRealisation {
+    .resumeRealization {
       position: absolute;
-
-      align-self: self-start;
       z-index: 1;
       width: 100%;
-      opacity: 0%;
+      opacity: 0;
       background-color: var(--primOpacity);
       color: var(--lightColor);
-      height: 0%;
-      transition: opacity 0.7s ease-in-out;
+      height: 0;
+      transition: opacity 0.5s ease-in-out;
       p {
         padding: 1em;
       }
     }
     &:hover {
-      .resumeRealisation {
+      .resumeRealization {
         height: 100%;
 
         opacity: 100%;
-        border-radius: 0 0 25px 25px;
+        border-radius: inherit;
       }
       img {
         filter: blur(10px);
@@ -97,7 +97,7 @@
   }
 }
 
-.realisationModal {
+.realizationModal {
   position: absolute;
   display: none;
   font-size: 1.1em;
@@ -123,10 +123,10 @@
     flex-basis: 45%;
     margin: 0;
   }
-  .realisationInfo {
+  .realizationInfo {
     margin: 0.6em 1em;
     display: flex;
-
+    min-height: 100%;
     flex-basis: 45%;
     flex-flow: column nowrap;
    
@@ -137,7 +137,7 @@
 
 .moreBtn{
     max-width: 40px;
-    min-height: 40px;
+    min-height: 20px;
     background-color: var(--primColor);
     display: flex;
     flex-flow: column nowrap;
@@ -167,4 +167,52 @@
 
     }
   }
+}
+.skillFilter{
+  .skill{
+    min-width: 7em;
+    font-size: 1em;
+  }
+  padding: 0.5em 0;
+}
+
+.skillList{
+  display: flex;
+  justify-self: end;
+  flex-flow: row wrap;
+  h3{
+    flex-basis: 100%;
+    color: var(--primColor);
+  }
+  gap: 0.3em;
+ 
+}
+
+.skill{
+  color: var(--darkColor);
+  border-radius: 50px;
+  min-width: 4.2em;
+  font-weight: 600;
+  font-size: 0.9em;
+  font-family: var(--titleFont);
+  border-width: 0.3em;
+  border-bottom-style: solid;
+ 
+  text-align: center;
+  padding: 0.3em 0.4em;
+  
+  
+ 
+} 
+.figma{
+  border-color: var(--primColor);
+  background-color: var(--primOpacity);
+}
+.illustrator{
+  border-color: var(--secColor);
+  background-color: var(--secOpacity);
+}
+.photoshop{
+  border-color: #FB8F67;
+  background-color: rgba(#FB8F67,0.4);
 }

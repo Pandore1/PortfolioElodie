@@ -16,11 +16,13 @@ a{
 
 h1,h2,h3,h4,h5,h6,a,button{
     font-family: var(--titleFont);
+
 }
+
 button{
     cursor: grab;
     transition: all 0.2s ease-in-out;
-
+    padding: 0.4em;
     font-weight: 600;
     border: none;
     border-radius: 50px;

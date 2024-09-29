@@ -3,7 +3,7 @@ import './style.css';
 //import imageUrl from "util/types"
 import Blob from "./components/blob";
 import Header from './components/header';
-import Realisation from './components/Realisation';
+import Realization from './components/realization';
 function App() {
  
 
@@ -13,7 +13,11 @@ function App() {
    
       <Header/>
       <main>
-      <Realisation></Realisation>
+
+        <section className='aboutSection'>
+          <h2>À propos</h2>
+        </section>
+      <Realization></Realization>
       </main>
   
       

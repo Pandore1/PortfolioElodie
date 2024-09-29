@@ -22,3 +22,27 @@ main>section{
      height: auto;
  }
 
+ .backgroundHeader{
+    background:no-repeat  url('src/assets/ordi.jpeg') center/contain  fixed;
+    text-align: center;
+    padding: 3% auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    color: var(--lightColor);
+    font-size: 2em;
+    min-width: 80%;
+    min-height: 70vh;
+
+    .arrowScrollBtn{
+        
+        width: 6em;
+        height: 6em;
+        border-radius: 50px;
+
+        padding: 1em;
+        outline: 0.5em solid var(--secColor);
+    }
+ }

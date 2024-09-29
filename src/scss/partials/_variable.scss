@@ -3,7 +3,8 @@ $primColor:#681F7A;
 $primOpacity:rgba($primColor,0.4);
 $lightColor: #F6FAF0; //F6FAF0  #EBE4F1
 $darkColor:#332C23;
-$secColor:#ADCF79; 
+$secColor:#ADCF79;
+$secOpacity:rgba($secColor,0.4);
 $secColorHover:darken($secColor,20);
 $primColorHover:darken($primColor,2);
 
@@ -16,6 +17,7 @@ $primColorHover:darken($primColor,2);
     --lightColor:#{$lightColor};
     --darkColor: #{$darkColor};
     --secColor:#{$secColor};
+    --secOpacity:#{$secOpacity};
     --secColorHover:#{$secColorHover};
     --titleFont:'Kodchasan';
     --textFont:'Open Sans','Arial','Helvetica',sans-serif;
