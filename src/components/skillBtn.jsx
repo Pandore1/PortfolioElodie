@@ -8,7 +8,7 @@ export default function SkillBtn({ filterSkill, menuSkill }) {
           return (
             <button 
               key={idx} 
-              onClick={() => filterSkill(skill)} 
+              onClick={() => filterSkill(skill.skillName)} 
               className={`skill ${skill.skillClass}`}
             >
               {skill.skillName}

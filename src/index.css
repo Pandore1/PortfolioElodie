@@ -12,6 +12,8 @@ body{
 a{
     text-decoration: none;
     font-weight: 500;
+    color: inherit;
+    cursor: grab;
 }
 
 h1,h2,h3,h4,h5,h6,a,button{
@@ -21,9 +23,15 @@ h1,h2,h3,h4,h5,h6,a,button{
 
 button{
     cursor: grab;
+    font-family: var(--titleFont);
     transition: all 0.2s ease-in-out;
     padding: 0.4em;
+    text-align: center;
     font-weight: 600;
+    color: var(--darkColor);
     border: none;
     border-radius: 50px;
+}
+button:hover{
+    transition: all 0.2s ease-in-out;
 }

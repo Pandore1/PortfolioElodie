@@ -10,21 +10,23 @@ export default function Realization() {
   const menuSkill = [
     ...new Set(
       realizationData.flatMap((item) => 
-        item.skills.map((skill) => ({
-          skillName: skill.skillName,
-          skillClass: skill.skillClass,
-        }))
+        item.skills.map((skill) => `${skill.skillName}|
+          ${skill.skillClass}`)
+         
+      
       )
     ),
-  ];
-
+  ].map((skillsStr)=>{
+    const [skillName,skillClass] = skillsStr.split("|");
+    return{skillName,skillClass};
+  });
   
-const filterSkill = (skillName) => {
-  const newRealizationDisplay = realizationData.filter((realizationItem) =>
-    realizationItem.skills.some((skill) => skill.skillName === skillName) // Correct filtering condition
-  );
-  setRealization(newRealizationDisplay);
-};
+  const filterSkill = (skillName) => {
+    const newRealizationDisplay = realizationData.filter((realizationItem) =>
+      realizationItem.skills.some((skill) => skill.skillName === skillName) // Correct filtering condition
+    );
+    setRealization(newRealizationDisplay);
+  };
 
 return (
   <>
@@ -32,7 +34,7 @@ return (
       <div className="imgBox col-5">
         <img className="" src={meHeader} alt="" />
       </div>
-      <div className="col-6">
+      <div className="col-6 specialityBox">
         <div id="design" className="specialityChoice">
           <a href="">
             <h2>Design</h2>

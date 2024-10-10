@@ -132,82 +132,81 @@ main > section {
 }
 
 /*Ligne en dessous du texte*/
-.realizationNav > h1 {
+.realizationNav {
+  background-color: var(--primColor);
+  display: flex;
+  text-transform: capitalize;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+.realizationNav h1 {
   font-size: 2.3em;
   text-align: center;
   color: var(--light-color);
 }
 
-.specialityChoice {
+.specialityBox {
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 2em;
+}
+.specialityBox .specialityChoice {
   border-bottom: 5px solid var(--secColor);
-  height: 45%;
   display: flex;
   align-items: center;
-  text-transform: capitalize;
-  padding: 20px;
-  font-size: 2em;
+  flex-basis: 45%;
   color: var(--lightColor);
   transition: all 0.5s ease-in-out;
 }
-.specialityChoice:hover {
+.specialityBox .specialityChoice:hover {
   transform: scaleX(1.05) translateX(-50px);
   transition: all 0.5s ease-in-out;
   text-shadow: 1px 4px 1px var(--secColorHover);
   cursor: grab;
 }
-.specialityChoice a {
-  color: inherit;
-  width: 100%;
+.specialityBox .specialityChoice a {
+  min-width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-}
-
-.realizationNav {
-  background-color: var(--primColor);
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-  justify-content: space-between;
-  position: relative;
-  padding: 0;
-  margin: 0;
 }
 
 .realizationSection {
   position: relative;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  gap: 0 1.5em;
   align-items: stretch;
 }
-
-.realization {
-  border-radius: 0 0 50px 50px;
+.realizationSection .realization {
+  border-radius: 0 0 25px 25px;
 }
-.realization .realizationTab {
+.realizationSection .realization .realizationTab {
   background-color: var(--secColor);
   width: 100%;
   min-height: 20px;
   display: flex;
   justify-content: space-between;
   border-radius: 25px 25px 0 0;
-  padding: 0.5em 1em;
+  padding: 0.3em 1em;
 }
-.realization .realizationTab h3 {
+.realizationSection .realization .realizationTab h3 {
   color: var(--primColor);
   font-size: 1.5em;
   padding: 0;
 }
-.realization .imgBox {
+.realizationSection .realization .imgBox {
   position: relative;
   border-radius: inherit;
 }
-.realization .imgBox img {
+.realizationSection .realization .imgBox img {
   border-radius: inherit;
 }
-.realization .imgBox .resumeRealization {
+.realizationSection .realization .imgBox .resumeRealization {
   position: absolute;
+  border-radius: inherit;
   z-index: 1;
   width: 100%;
   opacity: 0;
@@ -216,15 +215,14 @@ main > section {
   height: 0;
   transition: opacity 0.5s ease-in-out;
 }
-.realization .imgBox .resumeRealization p {
+.realizationSection .realization .imgBox .resumeRealization p {
   padding: 1em;
 }
-.realization .imgBox:hover .resumeRealization {
+.realizationSection .realization .imgBox:hover .resumeRealization {
   height: 100%;
   opacity: 100%;
-  border-radius: inherit;
 }
-.realization .imgBox:hover img {
+.realizationSection .realization .imgBox:hover img {
   filter: blur(10px);
 }
 
@@ -233,9 +231,9 @@ main > section {
   display: none;
   font-size: 1.1em;
   height: 50vh;
-  padding: 0.2em 0;
+  padding: 0.5em;
   justify-content: space-between;
-  top: 50vh;
+  top: 50%;
   left: 50%;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -252,19 +250,17 @@ main > section {
 }
 .realizationModal .imgBox {
   flex-basis: 45%;
-  margin: 0;
 }
 .realizationModal .realizationInfo {
-  margin: 0.6em 1em;
   display: flex;
   min-height: 100%;
-  flex-basis: 45%;
+  flex-basis: 50%;
   flex-flow: column nowrap;
 }
 
 .moreBtn {
-  max-width: 40px;
-  min-height: 20px;
+  max-width: 2.5em;
+  min-height: 2.5em;
   background-color: var(--primColor);
   display: flex;
   flex-flow: column nowrap;
@@ -277,11 +273,9 @@ main > section {
   max-width: 85%;
 }
 .moreBtn.open:active .moreIcon, .moreBtn:hover .moreIcon {
-  transition: all 0.2s ease-in-out;
   transform: rotateZ(45deg);
 }
 .moreBtn.close {
-  transition: all 0.2s ease-in-out;
   transform: rotateZ(45deg);
   align-self: flex-end;
 }
@@ -289,36 +283,34 @@ main > section {
   transform: rotateZ(-45deg);
 }
 
-.skillFilter {
-  padding: 0.5em 0;
-}
 .skillFilter .skill {
-  min-width: 7em;
+  min-width: 8em;
   font-size: 1em;
 }
 
-.skillList {
+.skillFilter, .skillList {
   display: flex;
-  justify-self: end;
   flex-flow: row wrap;
-  gap: 0.3em;
+  padding: 0.5em 0;
 }
-.skillList h3 {
+.skillFilter h3, .skillFilter p, .skillList h3, .skillList p {
   flex-basis: 100%;
   color: var(--primColor);
 }
-
-.skill {
-  color: var(--darkColor);
-  border-radius: 50px;
-  min-width: 4.2em;
-  font-weight: 600;
-  font-size: 0.9em;
-  font-family: var(--titleFont);
+.skillFilter .skill, .skillList .skill {
+  margin: 0 0.5em;
   border-width: 0.3em;
   border-bottom-style: solid;
-  text-align: center;
-  padding: 0.3em 0.4em;
+  padding: 0.5em 0.4em;
+  color: inherit;
+}
+
+.skillList {
+  justify-self: end;
+}
+.skillList .skill {
+  min-width: 4em;
+  font-size: 0.9em;
 }
 
 .figma {
