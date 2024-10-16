@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react"
-
+import ArrowScroll from "../assets/arrow.png"
 
 import Navbar from "./navbar";
 export default function Header() {
@@ -11,9 +11,11 @@ export default function Header() {
 
                 <h1>
                     Élodie Picard
-                    <p>Développeuse front-end</p>
                 </h1>
-                <button className="arrowScrollBtn"> Flèche</button>
+                <p>Développeuse Front-end, Designeuse</p>
+                    
+             
+                <button className="arrowScrollBtn"> <img src={ArrowScroll} alt="" /></button>
             </div>
          
           

@@ -31,7 +31,9 @@ export default function RealizationTemplate({
                     <img src={previewImage} alt="" />
                     <div className="resumeRealization">
                         <p>{desc}</p>
+                        <button onClick={realizationModalOpen}>Voir</button>
                     </div>
+                 
                 </div>
             </div>
             <div className={`realizationModal ${isRealizationOpen ? 'open' : ''}`}>
@@ -42,6 +44,7 @@ export default function RealizationTemplate({
                     <OpenMoreBtn isOpen={false} clicked={realizationModalClose} />
                     <h2>{title}</h2>
                     <p>{desc}</p>
+                    <p>{year}</p>
                     <div className="skillList">
                         <h3>Compétences nécessaires</h3>
                         {skills.map((skill, index) => (

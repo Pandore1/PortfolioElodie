@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%; 
     box-sizing: border-box;
+    font-size: 1.1em;
 }
 
 
@@ -23,7 +24,7 @@ main>section{
  }
 
  .backgroundHeader{
-    background:no-repeat  url('src/assets/ordi.jpeg') center/contain  fixed;
+    background:no-repeat  url('src/assets/ordi.jpeg') center/cover  fixed;
     text-align: center;
     padding: 3% auto;
     display: flex;
@@ -33,16 +34,41 @@ main>section{
     gap: 1em;
     color: var(--lightColor);
     font-size: 2em;
-    min-width: 80%;
-    min-height: 70vh;
+    min-width:100%;
+    min-height: 100vh;
+    h1{
+        text-shadow: 0.1em  0.01em var(--primColor);
+    }
 
     .arrowScrollBtn{
         
         width: 6em;
         height: 6em;
-        border-radius: 50px;
-
-        padding: 1em;
-        outline: 0.5em solid var(--secColor);
+       
+        background-color: transparent;
+        justify-self: end;
+        text-align: center;
+        filter: drop-shadow(0.2em 0.2em 0.5em var(--secColor))drop-shadow(0.2em 0.2em 0.2em var(--secColor));
+        animation: ArrowScroll 2s ease-in-out 0.5s infinite both;
+        border: none;
     }
+ }
+
+ .aboutSection{
+    max-width: 50%;
+    
+ }
+ @keyframes ArrowScroll {
+    0%{
+        transform: translateY(0);
+    }
+
+  
+    50%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    
  }

@@ -3,12 +3,13 @@
 :root {
   /*Couleur*/
   --primColor:#681F7A;
-  --primColorHover:#611d72;
+  --primColorHover:#571a66;
   --primOpacity:rgba(104, 31, 122, 0.4);
   --lightColor:#F6FAF0;
   --darkColor: #332C23;
   --secColor:#ADCF79;
   --secOpacity:rgba(173, 207, 121, 0.4);
+  --colorOpactiy:$colorOpacity;
   --secColorHover:#7ca63c;
   --titleFont:"Kodchasan";
   --textFont:"Open Sans","Arial","Helvetica",sans-serif;
@@ -18,6 +19,7 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  font-size: 1.1em;
 }
 
 main > section {
@@ -38,7 +40,7 @@ main > section {
 }
 
 .backgroundHeader {
-  background: no-repeat url("src/assets/ordi.jpeg") center/contain fixed;
+  background: no-repeat url("src/assets/ordi.jpeg") center/cover fixed;
   text-align: center;
   padding: 3% auto;
   display: flex;
@@ -48,17 +50,38 @@ main > section {
   gap: 1em;
   color: var(--lightColor);
   font-size: 2em;
-  min-width: 80%;
-  min-height: 70vh;
+  min-width: 100%;
+  min-height: 100vh;
+}
+.backgroundHeader h1 {
+  text-shadow: 0.1em 0.01em var(--primColor);
 }
 .backgroundHeader .arrowScrollBtn {
   width: 6em;
   height: 6em;
-  border-radius: 50px;
-  padding: 1em;
-  outline: 0.5em solid var(--secColor);
+  background-color: transparent;
+  justify-self: end;
+  text-align: center;
+  filter: drop-shadow(0.2em 0.2em 0.5em var(--secColor)) drop-shadow(0.2em 0.2em 0.2em var(--secColor));
+  animation: ArrowScroll 2s ease-in-out 0.5s infinite both;
+  border: none;
 }
 
+.aboutSection {
+  max-width: 50%;
+}
+
+@keyframes ArrowScroll {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .menuBox {
   position: fixed;
   background-color: var(--primColor);
@@ -130,27 +153,38 @@ main > section {
 }
 .menuBox .burgerIcon {
   color: var(--lightColor);
-  min-width: 6em;
-  background-color: transparent;
-  top: 0;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  right: 1em;
+  width: 5em;
+  height: 5em;
+  font-size: 15px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
 }
-.menuBox .burgerIcon .burgerLine {
-  transition: transform 0.5s ease-in-out;
+.menuBox .burgerIcon .burgerLine, .menuBox .burgerIcon .burgerLine::after, .menuBox .burgerIcon .burgerLine::before {
+  transition: top 0.2s 0.2s, transform 0.2s, background-color 0.4s 0.2s;
   display: block;
-  content: " ";
-  margin: 0.6em 0;
-  border-radius: 20px;
+  content: "";
+  width: 100%;
+  left: 0;
+  border-radius: 1em;
   height: 0.7em;
-  width: 90%;
+  position: absolute;
+  transform: rotate(0);
   background-color: var(--secColor);
 }
+.menuBox .burgerIcon .burgerLine {
+  transition: background-color 0.2s, top 0.2s, left 0.2s, transform 0.2s 0.15s;
+  top: 50%;
+  margin: 0.5em 0;
+}
+.menuBox .burgerIcon .burgerLine::before {
+  top: 1em;
+}
+.menuBox .burgerIcon .burgerLine::after {
+  top: -1em;
+}
 .menuBox.open {
-  transition: all 0.5s ease-in-out;
   min-height: 45%;
   min-width: 20%;
 }
@@ -159,15 +193,17 @@ main > section {
   width: 100%;
   height: 100%;
 }
-.menuBox.open .burgerLine:nth-child(1) {
-  transform: translate(0, 30px) rotate(45deg);
+.menuBox.open .burgerLine {
+  transition: background-color 0.2s, top 0.1s, left 0.2s, transform 1s 0.25s;
+  background-color: initial;
 }
-.menuBox.open .burgerLine:nth-child(2) {
-  width: 0;
-  display: none;
+.menuBox.open .burgerLine::before {
+  top: 0;
+  transform: rotate(-45deg);
 }
-.menuBox.open .burgerLine:nth-child(3) {
-  transform: translate(0px, 0px) rotate(-40deg);
+.menuBox.open .burgerLine::after {
+  top: 0;
+  transform: rotate(45deg);
 }
 
 /*
@@ -293,9 +329,9 @@ main > section {
   display: flex;
   flex-flow: row wrap;
   gap: 0 1.5em;
-  align-items: stretch;
 }
 .realizationSection .realization {
+  height: 100%;
   border-radius: 0 0 25px 25px;
 }
 .realizationSection .realization .realizationTab {
@@ -321,7 +357,12 @@ main > section {
 }
 .realizationSection .realization .imgBox .resumeRealization {
   position: absolute;
+  top: 0;
+  align-items: center;
+  text-align: center;
   border-radius: inherit;
+  display: flex;
+  flex-flow: column nowrap;
   z-index: 1;
   width: 100%;
   opacity: 0;
@@ -331,7 +372,18 @@ main > section {
   transition: opacity 0.5s ease-in-out;
 }
 .realizationSection .realization .imgBox .resumeRealization p {
-  padding: 1em;
+  margin: 1em;
+}
+.realizationSection .realization .imgBox .resumeRealization button {
+  margin: 1em;
+  border-bottom: 0.3em solid var(--secColorHover);
+  min-width: 40%;
+  background-color: var(--secColor);
+  color: var(--darkColor);
+  font-size: 1em;
+}
+.realizationSection .realization .imgBox .resumeRealization button:hover {
+  background-color: var(--secColorHover);
 }
 .realizationSection .realization .imgBox:hover .resumeRealization {
   height: 100%;
@@ -374,6 +426,7 @@ main > section {
 }
 
 .moreBtn {
+  border: none;
   max-width: 2.5em;
   min-height: 2.5em;
   background-color: var(--primColor);
@@ -382,10 +435,11 @@ main > section {
   align-items: center;
   justify-content: center;
   color: var(--lightColor);
-  padding: 0.2em;
+  padding: 0.2em 0.2em;
 }
 .moreBtn .moreIcon {
   max-width: 85%;
+  transform: rotate(0deg);
 }
 .moreBtn.open:active .moreIcon, .moreBtn:hover .moreIcon {
   transform: rotateZ(45deg);
@@ -399,7 +453,6 @@ main > section {
 }
 
 .skillFilter .skill {
-  min-width: 8em;
   font-size: 1em;
 }
 
@@ -413,10 +466,8 @@ main > section {
   color: var(--primColor);
 }
 .skillFilter .skill, .skillList .skill {
-  margin: 0 0.5em;
-  border-width: 0.3em;
-  border-bottom-style: solid;
-  padding: 0.5em 0.4em;
+  margin: 0.4em 0.5em;
+  padding: 0.4em 0.8em;
   color: inherit;
 }
 
@@ -424,7 +475,7 @@ main > section {
   justify-self: end;
 }
 .skillList .skill {
-  min-width: 4em;
+  min-width: 5em;
   font-size: 0.9em;
 }
 

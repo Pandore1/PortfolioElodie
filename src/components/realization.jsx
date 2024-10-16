@@ -45,9 +45,10 @@ return (
         </div>
       </div>
     </nav>
-    <section className="realizationSection">
+    <section id="realization" className="realizationSection">
+      <h2>Mes Réalisations:</h2>
       <div className="skillFilter col-12">
-        <p>Chercher par skill:</p>
+        <p>Rechercher par compétence</p>
         <SkillBtn filterSkill={filterSkill} menuSkill={menuSkill} />
       </div>
       {realization.map((realizationItem, idx) => ( // Render filtered realizations

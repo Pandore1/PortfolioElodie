@@ -13,25 +13,33 @@ a{
     text-decoration: none;
     font-weight: 500;
     color: inherit;
-    cursor: grab;
 }
 
 h1,h2,h3,h4,h5,h6,a,button{
     font-family: var(--titleFont);
 
 }
-
+a,button{
+    cursor: pointer;
+}
 button{
-    cursor: grab;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: var(--titleFont);
-    transition: all 0.2s ease-in-out;
-    padding: 0.4em;
+    padding:0.3em 0.4em;
     text-align: center;
     font-weight: 600;
-    color: var(--darkColor);
-    border: none;
+    border-bottom-style:solid;
+    border-bottom-width:0.3em;
+
     border-radius: 50px;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
+
 }
 button:hover{
-    transition: all 0.2s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.09);
 }

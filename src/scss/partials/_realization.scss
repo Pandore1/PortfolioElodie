@@ -51,8 +51,9 @@
   display: flex;
   flex-flow: row wrap;
   gap:0 1.5em;
-  align-items:stretch;
+  
   .realization {
+    height: 100%;
     border-radius: 0 0 25px 25px;
     .realizationTab {
       background-color: var(--secColor);
@@ -78,8 +79,12 @@
       }
       .resumeRealization {
         position: absolute;
+        top: 0;
+       align-items: center;
+       text-align: center;
         border-radius: inherit;
-
+        display: flex;
+        flex-flow: column nowrap;
         z-index: 1;
         width: 100%;
         opacity: 0;
@@ -88,7 +93,20 @@
         height: 0;
         transition: opacity 0.5s ease-in-out;
         p {
-          padding: 1em;
+          margin: 1em;
+        }
+        button{
+          margin: 1em;
+          border-bottom: 0.3em solid var(--secColorHover);
+
+          min-width:40%;
+          background-color: var(--secColor);
+
+          color: var(--darkColor);
+          font-size: 1em;
+          &:hover{
+            background-color: var(--secColorHover);
+          }
         }
       }
       &:hover {
@@ -144,6 +162,7 @@
 
 
 .moreBtn{
+    border: none;
     max-width: 2.5em;
     min-height: 2.5em;
     background-color: var(--primColor);
@@ -152,9 +171,11 @@
     align-items: center;
     justify-content: center;
     color: var(--lightColor);
-    padding: 0.2em;
+    padding: 0.2em 0.2em;
     .moreIcon{
       max-width: 85%;
+      transform: rotate(0deg);
+
   }
 
   &.open:active,&:hover{
@@ -177,7 +198,6 @@
 .skillFilter{
  
   .skill{
-    min-width: 8em;
     font-size: 1em;
   }
   
@@ -192,10 +212,8 @@
     color: var(--primColor);
   }
   .skill{
-    margin:0 0.5em;
-    border-width: 0.3em;
-    border-bottom-style: solid;
-    padding: 0.5em 0.4em;
+    margin:0.4em 0.5em;
+    padding: 0.4em 0.8em;
     color: inherit;
 
   }
@@ -203,7 +221,7 @@
 .skillList{
   justify-self: end;
   .skill{
-    min-width: 4em;
+    min-width: 5em;
     font-size: 0.9em;
   } 
  
